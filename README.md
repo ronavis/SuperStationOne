@@ -1,4 +1,4 @@
-﻿# 🎮 SuperStation One
+# 🎮 SuperStation One
 
 **Curated plug-and-play retro gaming environment for the Retro Remake SuperStation One (MiSTer FPGA).**
 
@@ -19,43 +19,77 @@
 ## 🎮 8BitDo Controllers: Plug & Play
 This repository includes pre-built controller mapping profiles for popular 8BitDo gamepads (NES30 Pro, SN30, SN30 Pro, Pro 2, M30, etc.) in `config/inputs/`:
 * **Startup Mode:** Power on your 8BitDo controller by holding **`Start + B`** (D-Input / Android mode) for 2 seconds.
-* **Auto-Mapped:** The console automatically recognizes the controller and applies the profile. It works immediately across **SNES, NES, Game Boy, Genesis, and Arcade** without needing to map buttons!
-* **In-Game Menu Combo:** Press **`Down + Select`** (or `L1 + R1 + Down`) while in any game to bring up the MiSTer menu to save states or return to favorites.
+* **Auto-Mapped:** The console automatically recognizes the controller and applies the profile. It works immediately across **SNES, NES, Game Boy, GBC, GBA, N64, Genesis, PSX, and Arcade** without needing to map buttons!
+* **In-Game Menu Combo:** Press **`Down + Select`** (or `Home / Guide` or `L1 + R1 + Down`) while in any game to bring up the MiSTer menu to save states or adjust video options.
+
+---
+
+## 📺 4K TV & Video Optimization Guide
+
+Your SuperStation One is configured with an optimized HDMI profile (`MiSTer.ini`) engineered specifically for modern 4K/1080p displays:
+
+* **Integer Scaling (`vscale_mode=1`):** Renders sharp square pixels with zero shimmering or distortion during high-speed horizontal scrolling.
+* **Sharp Interpolation Filter:** Eliminates the blurry bilinear smoothing common to default HDMI scalers.
+* **Sony Trinitron Aperture Grille (`Sony Trinitron (1968)`):** Hardware-accelerated phosphor simulation and scanlines that deliver the warmth, depth, and contrast of a high-end Sony PVM broadcast monitor.
+* **PSX Dithering Fix:**
+  * Original PlayStation hardware used 15-bit color with checkerboard dithering. On a 4K TV, this looks like a grainy screen door mesh.
+  * In-Game (e.g. *Castlevania: Symphony of the Night*), open the OSD menu and set **`Dithering: Off`** or **`De-dither`** for clean, vibrant 24-bit arcade-grade pixel art!
+* **Accessing Live Video Options:** While playing any game, open the OSD menu and press **Left or Right** to access the **Video Processing & Scaler** page to toggle filters, shadow masks, and scanlines in real time.
 
 ---
 
 ## 📂 Repository Contents
 
-* 🕹️ **`Favorites/`** — 380 instant-launch shortcuts (`.mgl` & `.mra`) covering Arcade, SNES, Genesis, NES, and TurboGrafx-16.
-* 🎨 **`media/`** — High-resolution box art and arcade flyers, organized by platform:
+* 🕹️ **`Favorites/`** — 507 instant-launch shortcuts (`.mgl` & `.mra`) organized across 9 platforms:
+  * `_01. Super Nintendo (SNES)` (55 favorites)
+  * `_02. Sega Genesis` (52 favorites)
+  * `_03. Nintendo (NES)` (100 favorites)
+  * `_04. TurboGrafx-16` (23 favorites)
+  * `_05. Arcade` (150 favorites)
+  * `_06. Game Boy` (33 favorites)
+  * `_07. Game Boy Color` (30 favorites)
+  * `_08. Game Boy Advance` (30 favorites)
+  * `_09. Nintendo 64` (34 favorites)
+* 🎨 **`media/`** — High-resolution box art and arcade flyers:
   * `media/Arcade/` (147 flyers & marquees)
   * `media/NES/` (100 box arts)
   * `media/SNES/` (55 box arts)
   * `media/Genesis/` (52 box arts)
   * `media/TGFX16/` (23 box arts)
-* 📺 **`ConsoleMode/`** — Pre-configured `gamelist.ini` for the TV-friendly front-end launcher.
-* ⚙️ **`config/`** — Optimized `MiSTer.ini` settings and `inputs/` folder with universal 8BitDo controller maps.
-* 💾 **`bootrom/`** — Master PS1 BIOS files (`boot.rom`, `scph5501.bin`, `sbi.zip`, etc.).
-* 🛠️ **`tools/`** — 1-click utility scripts:
-  * `download_library.ps1` — Pulls clean ROMs from Google Drive.
-  * `transfer_all_to_mister.ps1` — Syncs games, art, and configs to your console over Wi-Fi.
-  * `pull_bios_from_mister.ps1` — Copies BIOS and save files from your console to your PC and Google Drive.
-  * `backup_to_cloud.ps1` — Backs up your in-game saves and settings to Google Drive and local storage.
-  * `sync_with_gdrive.bat` — Quick interactive Google Drive sync.
-* 📝 **`games_wishlist.md`** — Co-op and multiplayer game tracker.
+  * `media/GAMEBOY/` (33 box arts)
+  * `media/GBC/` (29 box arts)
+  * `media/GBA/` (28 box arts)
+  * `media/N64/` (23 box arts)
+* 📺 **`ConsoleMode/`** — Pre-configured `gamelist.ini` featuring 509 titles for the TV-friendly front-end launcher.
+* ⚙️ **`config/`** — Master `MiSTer.ini` with custom 4K TV video profiles and universal 8BitDo controller maps.
+* 💾 **`bootrom/`** — Official authentic BIOS and boot ROM collection:
+  * PSX: Full 24-file Sony BIOS archive (`boot.rom`, `scph5501.bin`, `sbi.zip`, etc.)
+  * GBA: Official 16,384-byte boot ROM (`boot.rom`, `gba_bios.bin`)
+  * N64: Hardware IPL boot ROMs (`boot.rom`, `boot1.rom`, `N64-database.txt`)
+* 🛠️ **`tools/`** — Turnkey utility scripts:
+  * `download_library.ps1` — Downloads all clean 1G1R game sets and BIOS from Google Drive with rate-limit protection.
+  * `transfer_all_to_mister.ps1` — 1-click complete sync of games, BIOS, shortcuts, media, and configs to the console over Wi-Fi/Ethernet.
+  * `pull_bios_from_mister.ps1` — Pulls BIOS and save files from your console to your PC and Google Drive.
+  * `backup_to_cloud.ps1` — Backs up in-game saves and savestates to cloud and local storage.
+  * `sync_with_gdrive.bat` — Interactive Google Drive sync utility.
 
 ---
 
 ## ☁️ Shared Google Drive Hub (`SuperStation One Hub`)
 
-To keep this GitHub repository lightweight and copyright-free, all game ROMs and disc archives are hosted in the private Google Drive shared folder:
+To keep this Git repository lightweight and copyright-free, all complete 1G1R game libraries and firmware archives are hosted in the private Google Drive shared folder:
 
-| System | Library Details |
-| :--- | :--- |
-| 👾 **Arcade (MAME)** | Complete Top 147 Arcade collection (148 archives, ~827 MB) |
-| 🔴 **Nintendo (NES)** | 2,124 clean, deduplicated 1G1R titles (~225 MB) |
-| 🟣 **Super Nintendo (SNES)** | 955 clean, deduplicated 1G1R titles (~867 MB) |
-| 🔵 **Sega Genesis** | 880 clean, deduplicated 1G1R titles (~609 MB) |
-| 🟡 **Sega Master System** | 431 clean, deduplicated 1G1R titles (~51 MB) |
-| 🟠 **TurboGrafx-16 / PC Engine** | 349 clean, deduplicated 1G1R titles (~88 MB) |
-| 💿 **Sony PlayStation (PSX)** | Curated PSX games + Complete 24-file Sony BIOS archive |
+| System | Library Details | 1-Click Favorites |
+| :--- | :--- | :---: |
+| 👾 **Arcade (MAME)** | Complete Top 147 Arcade collection (148 archives, ~827 MB) | 150 `.mra` |
+| 🔴 **Nintendo (NES)** | 2,124 clean, deduplicated 1G1R titles (~225 MB) | 100 `.mgl` |
+| 🟣 **Super Nintendo (SNES)** | 955 clean, deduplicated 1G1R titles (~867 MB) | 55 `.mgl` |
+| 🔵 **Sega Genesis** | 880 clean, deduplicated 1G1R titles (~609 MB) | 52 `.mgl` |
+| 🟡 **Sega Master System** | 431 clean, deduplicated 1G1R titles (~51 MB) | Built-in |
+| 🟠 **TurboGrafx-16 / PC Engine** | 349 clean, deduplicated 1G1R titles (~88 MB) | 23 `.mgl` |
+| 🟢 **Game Boy (GB)** | 852 clean, deduplicated 1G1R titles (~81.5 MB) | 33 `.mgl` |
+| 🟢 **Game Boy Color (GBC)** | 1,038 clean, deduplicated 1G1R titles (~308.1 MB) | 30 `.mgl` |
+| 🟣 **Game Boy Advance (GBA)** | 1,346 clean, deduplicated 1G1R titles (~4.87 GB) | 30 `.mgl` |
+| 🔴 **Nintendo 64 (N64)** | 403 clean, deduplicated 1G1R BigEndian `.z64` titles (~4.14 GB) | 34 `.mgl` |
+| 💿 **Sony PlayStation (PSX)** | Curated PSX games + Complete 24-file Sony BIOS archive | 1-Click OSD |
+| 💾 **Master BIOS Collection** | Complete BIOS pack for PSX, GBA, and N64 | Plug & Play |

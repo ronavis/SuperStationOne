@@ -13,6 +13,7 @@ if (-not (Test-Path $rclone)) {
 }
 
 $mappings = @(
+    # Home Consoles
     @{ Remote = "$RemoteHub/SNES";         Local = "$rootDir\games\SNES";         Name = "Super Nintendo (SNES)" },
     @{ Remote = "$RemoteHub/Genesis";      Local = "$rootDir\games\Genesis";      Name = "SEGA Genesis" },
     @{ Remote = "$RemoteHub/NES";          Local = "$rootDir\games\NES";          Name = "Nintendo (NES)" },
@@ -20,6 +21,14 @@ $mappings = @(
     @{ Remote = "$RemoteHub/PCEngine";     Local = "$rootDir\games\PCEngine";     Name = "TurboGrafx-16 / PC Engine" },
     @{ Remote = "$RemoteHub/MasterSystem"; Local = "$rootDir\games\MasterSystem"; Name = "Sega Master System" },
     @{ Remote = "$RemoteHub/PSX";          Local = "$rootDir\games\PSX";          Name = "Sony PlayStation (PSX)" },
+    @{ Remote = "$RemoteHub/N64";          Local = "$rootDir\games\N64";          Name = "Nintendo 64 (N64)" },
+    
+    # Handhelds
+    @{ Remote = "$RemoteHub/GameBoy";      Local = "$rootDir\games\GameBoy";      Name = "Game Boy (GB)" },
+    @{ Remote = "$RemoteHub/GBC";          Local = "$rootDir\games\GBC";          Name = "Game Boy Color (GBC)" },
+    @{ Remote = "$RemoteHub/GBA";          Local = "$rootDir\games\GBA";          Name = "Game Boy Advance (GBA)" },
+    
+    # Master BIOS Collection
     @{ Remote = "$RemoteHub/BIOS";         Local = "$rootDir\bootrom";            Name = "Master BIOS Collection" }
 )
 
