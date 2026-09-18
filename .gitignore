@@ -1,0 +1,116 @@
+﻿# ==========================================
+# SuperStation One - Git Ignore Configuration
+# Protect against accidental commits of ROMs,
+# disc images, BIOS files, binaries, and saves.
+# ==========================================
+
+# 1. Ignore all files in games, but preserve folder hierarchy
+games/**
+!games/**/
+!games/**/.gitkeep
+
+# 2. Exclude all game ROM and Disc Image formats anywhere in repo
+*.chd
+*.iso
+*.bin
+*.cue
+*.img
+*.mdf
+*.mds
+*.pbp
+*.cso
+*.ccd
+*.sub
+*.gdi
+*.cdi
+*.nrg
+
+# Cartridge ROMs
+*.nes
+*.sfc
+*.smc
+*.fig
+*.swc
+*.gen
+*.smd
+*.sms
+*.gg
+*.sg
+*.pce
+*.sgx
+*.tgx
+*.z64
+*.n64
+*.v64
+*.gba
+*.gb
+*.gbc
+*.nds
+*.neo
+*.ngc
+*.ngp
+*.a26
+*.a52
+*.a78
+*.j64
+*.jag
+*.lnx
+*.ws
+*.wsc
+*.col
+*.int
+*.vec
+
+# Arcade / Compressed Archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.xz
+*.bz2
+
+# 3. BIOS and firmware files
+bootrom/*
+!bootrom/.gitkeep
+*.rom
+*.bios
+
+# 4. Saves, Savestates, and Memory Cards
+saves/*
+!saves/.gitkeep
+*.sav
+*.srm
+*.mcd
+*.state*
+*.nvram
+
+# 5. Local Backups
+Backups/
+
+# 6. Binaries, Executables, and Large Tools
+*.exe
+*.dll
+*.so
+*.dylib
+tools/rclone.exe
+tools/*.exe
+
+# 7. Nested Git Repositories
+shared-repo/
+
+# 8. OS and temporary metadata files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
+.Spotlight-V100
+.Trashes
+.TemporaryItems
+~$*
+
+# 9. Editor directories
+.vscode/*
+!.vscode/launch.json
+.idea/
+*.swp
+*.tmp
