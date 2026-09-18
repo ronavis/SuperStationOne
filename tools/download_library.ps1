@@ -1,9 +1,10 @@
-$rclone = "O:\SuperStationOne\tools\rclone.exe"
+﻿$rclone = "O:\SuperStationOne\tools\rclone.exe"
 
 $mappings = @(
     @{ Remote = "gdrive:ROMs/Super Nintendo Entertainment System"; Local = "O:\SuperStationOne\games\SNES" },
     @{ Remote = "gdrive:ROMs/SEGA Genesis"; Local = "O:\SuperStationOne\games\Genesis" },
     @{ Remote = "gdrive:ROMs/Nintendo Entertainment System"; Local = "O:\SuperStationOne\games\NES" },
+    @{ Remote = "gdrive:ROMs/Arcade"; Local = "O:\SuperStationOne\games\mame" },
     @{ Remote = "gdrive:ROMs/Nintendo 64"; Local = "O:\SuperStationOne\games\N64" },
     @{ Remote = "gdrive:ROMs/Game Boy"; Local = "O:\SuperStationOne\games\GameBoy" },
     @{ Remote = "gdrive:ROMs/SEGA CD"; Local = "O:\SuperStationOne\games\MegaCD" },

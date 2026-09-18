@@ -1,4 +1,4 @@
-# Transfer all game libraries from Drive O: to SuperStation One console
+﻿# Transfer all game libraries from Drive O: to SuperStation One console
 param (
     [string]$ConsoleIP = "10.0.0.74"
 )
@@ -19,8 +19,10 @@ if (-not $ping) {
 }
 
 $mappings = @(
+    @{ Local = "$source\SNES"; Remote = "mister:/media/fat/games/SNES"; Name = "Super Nintendo (SNES)" },
     @{ Local = "$source\Genesis"; Remote = "mister:/media/fat/games/MegaDrive"; Name = "SEGA Genesis" },
     @{ Local = "$source\NES"; Remote = "mister:/media/fat/games/NES"; Name = "Nintendo (NES)" },
+    @{ Local = "$source\mame"; Remote = "mister:/media/fat/games/mame"; Name = "Arcade (MAME)" },
     @{ Local = "$source\PCEngine"; Remote = "mister:/media/fat/games/TGFX16"; Name = "TurboGrafx-16 / PC Engine" },
     @{ Local = "$source\MasterSystem"; Remote = "mister:/media/fat/games/SMS"; Name = "Sega Master System" }
 )
