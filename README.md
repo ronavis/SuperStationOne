@@ -61,6 +61,31 @@ Your SuperStation One is configured with an optimized HDMI profile (`MiSTer.ini`
   * `media/GBA/` (28 box arts)
   * `media/N64/` (23 box arts)
 * 📺 **`ConsoleMode/`** — Pre-configured `gamelist.ini` featuring 509 titles for the TV-friendly front-end launcher.
+
+---
+
+## 🖼️ Console Mode Interface & Visual Layout Guide
+
+Retro Remake's **Console Mode** is the official graphical frontend built specifically for the SuperStation One (derived from SimpleMenu). It provides a clean, two-pane console experience:
+
+* **Top-Level Home Menu:** When Console Mode boots, you will see the root navigation:
+  * `Load Game` — Opens the console carousel to browse games by system.
+  * `Favorites` — 1-click access to curated favorites across all platforms.
+  * `Homebrew` — Pre-loaded homebrew library.
+  * `History` — The last 20 games/cores launched.
+  * `Settings` — Frontend configuration and options.
+* **Game & Favorites Screen Layout (What it looks like):**
+  * **Left Side:** A vertical list of clean game titles.
+  * **Right Side:** High-resolution box art cover/flyer for whichever game is currently highlighted.
+  * **Top Bar:** Wordmark logo of the active system (e.g. *Super Nintendo Entertainment System*, *Sega Genesis*, *PlayStation*).
+  * **Bottom Bar:** Quick controller shortcuts (`A` Launch, `B` Back, `Select` Game Options, `+` Favorite).
+* **Official Visual Screenshots & Guides:**
+  * 📸 [Home Menu Screenshot](https://raw.githubusercontent.com/Takiiiiiiii/SuperStation-Documentation/refs/heads/main/CONSOLE_MODE/001.png)
+  * 📸 [Console Selection Screenshot](https://raw.githubusercontent.com/Takiiiiiiii/SuperStation-Documentation/refs/heads/main/CONSOLE_MODE/002.png)
+  * 📸 [Game Browser with Box Art (SNES) Screenshot](https://raw.githubusercontent.com/Takiiiiiiii/SuperStation-Documentation/refs/heads/main/CONSOLE_MODE/003.png)
+  * 📸 [Favorites Menu Screenshot](https://raw.githubusercontent.com/Takiiiiiiii/SuperStation-Documentation/refs/heads/main/CONSOLE_MODE/016.png)
+  * 📸 [Settings Menu Screenshot](https://raw.githubusercontent.com/Takiiiiiiii/SuperStation-Documentation/refs/heads/main/CONSOLE_MODE/020.png)
+  * 📺 [Official Video Walkthrough](https://www.youtube.com/watch?v=1sfifOftuFE)
 * ⚙️ **`config/`** — Master `MiSTer.ini` with custom 4K TV video profiles and universal 8BitDo controller maps.
 * 💾 **`bootrom/`** — Official authentic BIOS and boot ROM collection:
   * PSX: Full 24-file Sony BIOS archive (`boot.rom`, `scph5501.bin`, `sbi.zip`, etc.)
