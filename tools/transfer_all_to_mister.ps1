@@ -32,7 +32,7 @@ $systemMappings = @(
     @{ Local = "$rootDir\config\inputs"; Remote = "$remoteBase/config/inputs"; Name = "8BitDo Controller Profiles" },
     @{ Local = "$rootDir\Favorites";     Remote = "$remoteBase/Favorites";     Name = "1-Click Favorites" },
     @{ Local = "$rootDir\media";         Remote = "$remoteBase/media";         Name = "High-Res Box Art & Flyers (Favorites)" },
-    @{ Local = "$rootDir\media\images";  Remote = "$remoteBase/media";         Name = "Full Library Box Art (Console Mode)" },
+    @{ Local = "$rootDir\media\images\images"; Remote = "$remoteBase/media/images"; Name = "Full Library Box Art (Console Mode)" },
     @{ Local = "$rootDir\ConsoleMode";   Remote = "$remoteBase/ConsoleMode";   Name = "ConsoleMode Launcher Config" },
     @{ Local = "$rootDir\Scripts";       Remote = "$remoteBase/Scripts";       Name = "Helper Scripts" }
 )
@@ -105,4 +105,5 @@ if (-not $SkipGames) {
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 Write-Host "  All systems successfully synced to SuperStation One!" -ForegroundColor Green
 Write-Host "==========================================================" -ForegroundColor Cyan
+
 

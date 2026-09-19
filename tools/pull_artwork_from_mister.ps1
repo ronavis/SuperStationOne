@@ -16,6 +16,9 @@ param (
 $scriptDir  = if ($PSScriptRoot) { $PSScriptRoot } else { "O:\SuperStationOne\tools" }
 $rootDir    = Split-Path -Parent $scriptDir
 $rclone     = Join-Path $scriptDir "rclone.exe"
+# Pulls to media/images/ which mirrors console structure:
+# media/images/images/ = Console Mode artwork (imagesPath in config.ini)
+# media/images/SNES/   = SNES system art, etc.
 $localMedia = "$rootDir\media\images"
 $remoteMedia = ":sftp,host=$ConsoleIP,user=root,pass=6NrD4Z-zcI9ORRdxQ-Ie6qo:/media/fat/media"
 
@@ -60,3 +63,4 @@ Write-Host "  Location      : $localMedia" -ForegroundColor Gray
 Write-Host "`n  Nick / future users: just run transfer_all_to_mister.ps1" -ForegroundColor Yellow
 Write-Host "  No scraping needed!" -ForegroundColor Green
 Write-Host "==========================================================" -ForegroundColor Cyan
+
