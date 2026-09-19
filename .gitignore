@@ -114,3 +114,8 @@ Thumbs.db
 .idea/
 *.swp
 *.tmp
+
+# 10. Full Library Box Art (downloaded from console — too large for git)
+# Run: .\tools\pull_artwork_from_mister.ps1  to populate this from your console
+# Run: .\tools\transfer_all_to_mister.ps1    to push it back to a new console
+media/images/
