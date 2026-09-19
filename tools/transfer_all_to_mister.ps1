@@ -26,12 +26,13 @@ if (-not $ping) {
 Write-Host "[OK] Connected to SuperStation One!" -ForegroundColor Green
 
 # 1. System Configs, Controllers, Favorites, and Media
-Write-Host "`n[1/3] Syncing Controller Maps, Favorites, and Media..." -ForegroundColor Cyan
+Write-Host "`n[1/3] Syncing Controller Maps, Favorites, Box Art, and Media..." -ForegroundColor Cyan
 
 $systemMappings = @(
     @{ Local = "$rootDir\config\inputs"; Remote = "$remoteBase/config/inputs"; Name = "8BitDo Controller Profiles" },
     @{ Local = "$rootDir\Favorites";     Remote = "$remoteBase/Favorites";     Name = "1-Click Favorites" },
-    @{ Local = "$rootDir\media";         Remote = "$remoteBase/media";         Name = "High-Res Box Art & Flyers" },
+    @{ Local = "$rootDir\media";         Remote = "$remoteBase/media";         Name = "High-Res Box Art & Flyers (Favorites)" },
+    @{ Local = "$rootDir\media\images";  Remote = "$remoteBase/media";         Name = "Full Library Box Art (Console Mode)" },
     @{ Local = "$rootDir\ConsoleMode";   Remote = "$remoteBase/ConsoleMode";   Name = "ConsoleMode Launcher Config" },
     @{ Local = "$rootDir\Scripts";       Remote = "$remoteBase/Scripts";       Name = "Helper Scripts" }
 )
@@ -104,3 +105,4 @@ if (-not $SkipGames) {
 Write-Host "`n==========================================================" -ForegroundColor Cyan
 Write-Host "  All systems successfully synced to SuperStation One!" -ForegroundColor Green
 Write-Host "==========================================================" -ForegroundColor Cyan
+
